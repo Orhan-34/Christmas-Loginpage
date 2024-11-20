@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+	margin: 0;
+	font-family: "Sour Gummy", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+	background-color: #c9d6ff;
+}
+
+.social-icons {
+	margin: 20px 0;
+}
+
+.social-icons a {
+	border: 1px solid #ccc;
+	border-radius: 20%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 10px;
+	width: 40px;
+	height: 40px;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+	background-color: #c9d6ff;
+	transform: scale(1.1);
+}
+
+.toggle-container {
+	transition: all 0.6s ease-in-out;
+	z-index: 1000;
+	overflow: hidden;
+	background-image: url('./Images/background.jpeg');
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.container{
+	overflow: hidden;
+}
+
+.container#active .toggle-container {
+	transform: translateX(-100%);
+	overflow: hidden;
+	background-image: url('./Images/christmas.gif');
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+.sign-in {
+	left: 0;
+	z-index: 5;
+	animation: fadeInLeft 0.6s forwards; /* Giriş animasyonu */
+}
+
+
+.sign-up {
+    left: 0;
+    z-index: 1;
+}
+
+.container#active .sign-up {
+    opacity: 1;
+    z-index: 5;
+    animation: fadeInRight 0.6s forwards; /* Kayıt animasyonu */
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.toggle {
+	transform: translateX(0);
+	transition: all 0.6s ease-in-out;
+	left: -100%;
+}
+
+.toggle-panel {
+	transform: translateX(0);
+	transition: all 0.6s ease-in-out;
+}
+
+button{
+	transition: 0.6s ease-out;
+}
+button:hover {
+    transform: scaleX(1.15); /* Butonun hover durumunda büyümesi */
+	font-size: 1.2rem;
+}
+
+.sign-in button:hover{
+	background-color: white;
+	color: black;
+	border: 1.5px dotted black;
+}
+
+.sign-up button:hover{
+	background-color: white;
+	color: black;
+	border: 1.5px dotted black;
+}
+
+.forget-password{
+	transition: 0.6s ease-out;
+}
+.forget-password:hover{
+	text-decoration: underline;
+	transform: scale(1.2);
+}
